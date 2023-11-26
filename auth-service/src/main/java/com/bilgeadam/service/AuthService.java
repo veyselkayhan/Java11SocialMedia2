@@ -79,6 +79,8 @@ public class AuthService extends ServiceManager<Auth,Long> {
         return AuthMapper.INSTANCE.fromAuthToRegisterResponse(auth);
     }
 
+
+
     public String login(LoginRequestDto dto) {
         Optional<Auth> authOptional =  authRepository.findOptionalByUsernameAndPassword(dto.getUsername(),dto.getPassword());
         if(authOptional.isEmpty()){

@@ -1,5 +1,7 @@
 package com.bilgeadam.service;
 
+import com.bilgeadam.mapper.IElasticMapper;
+import com.bilgeadam.rabbitmq.model.RegisterElasticModel;
 import com.bilgeadam.repository.UserProfileRepository;
 import com.bilgeadam.repository.entity.UserProfile;
 import com.bilgeadam.utility.ServiceManager;
@@ -16,7 +18,10 @@ public class UserProfileService extends ServiceManager<UserProfile, String> {
     public UserProfileService(UserProfileRepository userProfileRepository) {
         super(userProfileRepository);
         this.userProfileRepository = userProfileRepository;
+    }
 
-
+    public UserProfile createUserWithRabbitMq(RegisterElasticModel model) {
+        return save(IElasticMapper.INSTANCE.toUserProfile(model));
     }
 }
+

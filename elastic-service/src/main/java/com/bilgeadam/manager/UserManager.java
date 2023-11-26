@@ -18,4 +18,6 @@ public interface UserManager {
     @GetMapping(FINDALL)
     public ResponseEntity<List<UserProfile>> findAll();
 
+
+
 }
