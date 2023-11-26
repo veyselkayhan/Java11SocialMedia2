@@ -12,24 +12,24 @@ import org.springframework.mail.javamail.JavaMailSender;
 public class MailServiceApplication {
 
 
-    private final JavaMailSender javaMailSender;
-
-
-    public MailServiceApplication(JavaMailSender javaMailSender) {
-        this.javaMailSender = javaMailSender;
-
-    }
-
-
-    @EventListener(ApplicationReadyEvent.class)
-    public void sendMail() {
-        SimpleMailMessage mailMessage = new SimpleMailMessage();
-        mailMessage.setFrom("${java11mailusername}");
-        mailMessage.setTo("veyselkayhan17@gmail.com");
-        mailMessage.setSubject("SOCIAL MEDİA APP ACTIVATION CODE");
-        mailMessage.setText("SALAMLAR");
-        javaMailSender.send(mailMessage);
-    }
+//    private final JavaMailSender javaMailSender;
+//
+//
+//    public MailServiceApplication(JavaMailSender javaMailSender) {
+//        this.javaMailSender = javaMailSender;
+//
+//    }
+//
+//
+//    @EventListener(ApplicationReadyEvent.class)
+//    public void sendMail() {
+//        SimpleMailMessage mailMessage = new SimpleMailMessage();
+//        mailMessage.setFrom("${java11mailusername}");
+//        mailMessage.setTo("veyselkayhan17@gmail.com");
+//        mailMessage.setSubject("SOCIAL MEDİA APP ACTIVATION CODE");
+//        mailMessage.setText("SALAMLAR");
+//        javaMailSender.send(mailMessage);
+//    }
 
     public static void main(String[] args) {
         SpringApplication.run(MailServiceApplication.class);

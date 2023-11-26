@@ -1,6 +1,0 @@
-# Project exclude paths
-/.gradle/
-/auth-service/build/
-/auth-service/build/classes/java/main/
-/user-service/build/
-/user-service/build/classes/java/main/
